@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # root
-.vscode
+# note: do check-in .vscode for a consistent dev env
 
 # app
 app/node_modules

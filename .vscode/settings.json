@@ -1,4 +1,13 @@
 {
-    "editor.formatOnSave": true,
-    "git.ignoreLimitWarning": true
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "git.ignoreLimitWarning": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.lightbulb.enabled": false,
+  "editor.lineHeight": 0,
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 79
 }

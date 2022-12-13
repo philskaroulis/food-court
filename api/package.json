@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "cd ..; git subtree push --prefix api heroku main",
     "start": "node index.js",
     "start:dev": "nodemon index.js"
   },
@@ -18,5 +19,8 @@
   "devDependencies": {
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.20"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }

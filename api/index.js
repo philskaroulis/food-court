@@ -1,6 +1,9 @@
 const express = require('express')
+const cors = require("cors")
 const app = express()
-const port = 3000
+const port = 5000
+
+app.use(cors())
 
 // read .env only in dev
 if (process?.env?.NODE_ENV !== "production") {
@@ -8,7 +11,18 @@ if (process?.env?.NODE_ENV !== "production") {
 }
 
 app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.get('/hello-world', (req, res) => {
   const { id } = req.query
+
+  if (!id) {
+    const msg = "Bad Request: Missing id."
+    console.error(msg)
+    res.status(400).json({error: msg})
+    return
+  }
 
   const db = require("./datasource")
 
@@ -18,7 +32,7 @@ app.get('/', (req, res) => {
     .then((doc) => {
       if (doc.exists) {
         const { firstName, lastName } = doc.data()
-        res.status(200).send(`Hello. My name is ${firstName} ${lastName}.`)
+        res.status(200).send({ firstName, lastName })
       } else {
         console.error("id not found")
         res.status(401).json(result)

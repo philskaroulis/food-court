@@ -11,7 +11,7 @@ if (process?.env?.NODE_ENV !== "production") {
 }
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.status(200).send('Hello World!')
 })
 
 app.get('/hello-world', (req, res) => {

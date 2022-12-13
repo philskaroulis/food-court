@@ -10,8 +10,8 @@ function App() {
   useEffect(
     () => {
       try {
-        const endpoint = "http://localhost:5000/hello-world";
-        fetch(endpoint + "?id=c7ICVeZJFf9SfYvT85Ov")
+        const endpoint = process.env.REACT_APP_API_ENDPOINT;
+        fetch(endpoint + "hello-world?id=c7ICVeZJFf9SfYvT85Ov")
           .then((response) => response.json())
           .then((data) => {
             setFirstName(data.firstName);
